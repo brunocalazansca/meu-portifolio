@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Container, Row, Col, Button, Image } from "react-bootstrap";
 import { Download, Mail, ExternalLink } from "lucide-react";
+import { FaGithub } from 'react-icons/fa';
 import { motion } from "framer-motion";
-import heroImg from "../../assets/hero.png";
+import perfilImg from "../../assets/images/perfil.png";
 import { technologies } from "../../data/technologies";
 import { projects } from "../../data/projects";
 import type { Project } from "../../data/projects";
@@ -55,12 +56,28 @@ const HeroSection = () => {
                 </div>
 
                 <div className="d-flex flex-wrap gap-3">
-                  <Button className={`${styles.btnPrimaryCustom} px-4 py-2 d-flex align-items-center gap-2`}>
-                    <Download size={18} />
-                    Download CV
-                  </Button>
+                  <a
+                      href='../../../public/documents/curriculo.pdf'
+                      download="Bruno_Calazans_CV.pdf"
+                      className="text-decoration-none"
+                  >
+                    <Button className={`${styles.btnPrimaryCustom} px-4 py-2 d-flex align-items-center gap-2`}>
+                      <Download size={18} />
+                      Download CV
+                    </Button>
+                  </a>
 
-                  <Button className={`${styles.btnOutlineCustom} px-4 py-2 d-flex align-items-center gap-2`}>
+                  <a href="https://github.com/brunocalazansca" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+                    <Button className={`${styles.btnPrimaryCustom} px-4 py-2 d-flex align-items-center gap-2`}>
+                      <FaGithub size={20} color="#000" />
+                      GitHub
+                    </Button>
+                  </a>
+
+                  <Button
+                      href="mailto:bcalazanscarritilha@gmail.com"
+                      className={`${styles.btnOutlineCustom} px-4 py-2 d-flex align-items-center gap-2`}
+                  >
                     <Mail size={18} />
                     Entrar em Contato
                   </Button>
@@ -77,7 +94,7 @@ const HeroSection = () => {
               >
                 <div className={styles.heroImageWrapper}>
                   <Image
-                      src={heroImg}
+                      src={perfilImg}
                       alt="Perfil"
                       className="w-100 h-100 object-fit-cover"
                   />
@@ -190,6 +207,45 @@ const HeroSection = () => {
               </Col>
             ))}
           </Row>
+        </Container>
+      </section>
+
+      <section className={`${styles.certSection} py-5 border-top border-dark`}>
+        <Container>
+          <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+          >
+            <h2 className={`${styles.sectionTitle} fw-bold mb-4`}>Certificações</h2>
+
+            <Row className="justify-content-center">
+              <Col xs={12} sm={8} md={6} lg={4}>
+                <motion.a
+                    href="https://www.credly.com/badges/f1457b95-df8c-4287-9f31-31717a74c754"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="text-decoration-none"
+                >
+                  <div className={styles.certCard}>
+                    <Image
+                        src="https://github.com/user-attachments/assets/bd1604d1-a1df-40ef-9a05-b7f5240a0351"
+                        alt="AWS Certified Cloud Practitioner"
+                        fluid
+                        className={styles.certImage}
+                    />
+                    <div className="mt-3 text-center">
+                      <h4 className="text-white fs-5 mb-1">AWS Certified Cloud Practitioner</h4>
+                      <p className={styles.textSecondaryCustom}>Amazon Web Services (AWS)</p>
+                    </div>
+                  </div>
+                </motion.a>
+              </Col>
+            </Row>
+          </motion.div>
         </Container>
       </section>
 
