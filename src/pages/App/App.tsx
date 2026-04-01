@@ -26,39 +26,38 @@ const HeroSection = () => {
 
   return (
     <>
-      {/* Hero */}
       <section className={styles.heroSection}>
         <Container>
           <Row className="align-items-center">
 
-            {/* Lado Esquerdo: Textos */}
             <Col md={6} lg={7} className="text-md-start pt-5 pt-md-0">
               <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  initial={styles.initial}
+                  animate={styles.animate}
                   transition={{ duration: 0.8 }}
               >
-                <p className={`${styles.heroGreeting} ${styles.textPrimaryCustom} fw-semibold mb-2`}>
-                  OLÁ, EU SOU
-                </p>
-
-                <h1 className={`${styles.heroTitle} fw-bold mb-3 text-white display-3`}>
-                  Bruno Calazans Carritilha
-                </h1>
-
-                <h2 className={`${styles.heroSubtitle} mb-4 ${styles.textSecondaryCustom}`}>
-                  Desenvolvedor Full Stack
+                <h2 className={`${styles.heroGreeting} fw-bold`}>
+                  Olá, eu sou o
                 </h2>
 
-                <p className={`${styles.heroDescription} mb-5 ${styles.textMutedCustom}`}>
-                  Criando experiências digitais modernas e escaláveis com foco
-                  em performance e design.
-                </p>
+                <div className="d-inline-block text-center mb-5 mt-2">
+                  <h1 className={`${styles.heroTitle} fw-bold mb-2 text-white`}>
+                    <span className={styles.textPrimaryCustom}>Bruno Calazans</span>
+                  </h1>
+
+                  <h3 className={`${styles.heroSubtitle} mb-2 mt-4 ${styles.textSecondaryCustom} fs-5`}>
+                    Desenvolvedor Full Stack
+                  </h3>
+
+                  <h3 className={`${styles.heroSubtitle} mb-0 ${styles.textSecondaryCustom} fs-5 mt-2`}>
+                    PHP | Laravel | React | React Native
+                  </h3>
+                </div>
 
                 <div className="d-flex flex-wrap gap-3">
                   <Button className={`${styles.btnPrimaryCustom} px-4 py-2 d-flex align-items-center gap-2`}>
                     <Download size={18} />
-                    Baixar Currículo
+                    Download CV
                   </Button>
 
                   <Button className={`${styles.btnOutlineCustom} px-4 py-2 d-flex align-items-center gap-2`}>
@@ -69,7 +68,6 @@ const HeroSection = () => {
               </motion.div>
             </Col>
 
-            {/* Lado Direito: Imagem */}
             <Col md={6} lg={5} className="d-flex justify-content-center justify-content-md-end mt-5 mt-md-0">
               <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -89,6 +87,26 @@ const HeroSection = () => {
             </Col>
 
           </Row>
+        </Container>
+      </section>
+
+      <section className={`${styles.aboutSection} py-5 border-top border-dark`}>
+        <Container>
+          <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+          >
+            <h2 className={`fw-bold mb-4 text-white`}>
+              Sobre mim
+            </h2>
+            <p className={`${styles.aboutText} mx-auto mb-0`}>
+              Formado em Análise e Desenvolvimento de Sistemas: IFG - Campus Formosa.<br/>
+              Sólida experiência no ecossistema PHP (Laravel) e JavaScript (React/React Native) e garantia de qualidade com PestPHP, Codeception e Robot Framework. Sou apaixonado pelo desenvolvimento de aplicações rápidas, escaláveis e com foco na experiência do usuário, buscando evoluir continuamente a performance e acessibilidade.
+            </p>
+          </motion.div>
         </Container>
       </section>
 
