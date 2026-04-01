@@ -104,13 +104,12 @@ const HeroSection = () => {
             </h2>
             <p className={`${styles.aboutText} mx-auto mb-0`}>
               Formado em Análise e Desenvolvimento de Sistemas: IFG - Campus Formosa.<br/>
-              Sólida experiência no ecossistema PHP (Laravel) e JavaScript (React/React Native) e garantia de qualidade com PestPHP, Codeception e Robot Framework. Sou apaixonado pelo desenvolvimento de aplicações rápidas, escaláveis e com foco na experiência do usuário, buscando evoluir continuamente a performance e acessibilidade.
+              Sólida experiência no ecossistema PHP (Laravel) e JavaScript (React/React Native). Apaixonado pelo desenvolvimento de aplicações rápidas, escaláveis e com foco na experiência do usuário, buscando evoluir continuamente a performance e acessibilidade.
             </p>
           </motion.div>
         </Container>
       </section>
 
-      {/* Tecnologias & Ferramentas */}
       <section className={`${styles.techSection} py-5`}>
         <Container>
           <motion.div
@@ -141,7 +140,6 @@ const HeroSection = () => {
         </Container>
       </section>
 
-      {/* Projetos */}
       <section className={`${styles.projectsSection} py-5`}>
         <Container>
           <motion.div
@@ -195,14 +193,12 @@ const HeroSection = () => {
         </Container>
       </section>
 
-      {/* Modal */}
       <ProjectModal
           project={selectedProject}
           open={modalOpen}
           onClose={handleModalClose}
       />
 
-      {/* Footer */}
       <Footer />
     </>
   );

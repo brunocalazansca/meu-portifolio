@@ -2,7 +2,6 @@ export const technologies = [
   "React",
   "React Native",
   "TypeScript",
-  "Node.js",
   "Bootstrap",
   "PostgreSQL",
   "Docker",
