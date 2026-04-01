@@ -6,7 +6,7 @@ export const technologies = [
   "PostgreSQL",
   "Docker",
   "Git",
-  "Codecption",
+  "Codeception",
   "PestPHP",
   "Gitlab CI/CD",
   "AWS",
