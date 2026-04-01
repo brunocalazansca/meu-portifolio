@@ -2,6 +2,14 @@
   --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
+  
+  --primary-color: #38decb;
+  --primary-dark: #2ebaa9;
+  --bg-dark: #0b1116;
+  --card-bg: #111927;
+  --card-border: rgba(255, 255, 255, 0.06);
+  --text-muted: #8892b0;
+  --text-secondary: #a8b2d1;
 
   font: 16px/150% var(--sans);
   letter-spacing: 0.18px;

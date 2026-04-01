@@ -8,7 +8,7 @@ import { projects } from "../../data/projects";
 import type { Project } from "../../data/projects";
 import ProjectModal from "../../components/Modal/Modal";
 import Footer from "../../components/Footer/Footer";
-import "./App.css";
+import styles from "./App.module.scss";
 
 const HeroSection = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -27,7 +27,7 @@ const HeroSection = () => {
   return (
     <>
       {/* Hero */}
-      <section className="hero-section" style={{ paddingTop: "120px", paddingBottom: "80px" }}>
+      <section className={styles.heroSection}>
         <Container>
           <Row className="align-items-center">
 
@@ -38,30 +38,30 @@ const HeroSection = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
               >
-                <p className="text-primary-custom fw-semibold mb-2" style={{ letterSpacing: "2px", fontSize: "0.85rem", textTransform: "uppercase" }}>
+                <p className={`${styles.heroGreeting} ${styles.textPrimaryCustom} fw-semibold mb-2`}>
                   OLÁ, EU SOU
                 </p>
 
-                <h1 className="fw-bold mb-3 text-white display-3" style={{ fontSize: "4rem" }}>
-                  Seu Nome
+                <h1 className={`${styles.heroTitle} fw-bold mb-3 text-white display-3`}>
+                  Bruno Calazans Carritilha
                 </h1>
 
-                <h2 className="mb-4 text-secondary-custom" style={{ fontWeight: 400, fontSize: "1.75rem" }}>
+                <h2 className={`${styles.heroSubtitle} mb-4 ${styles.textSecondaryCustom}`}>
                   Desenvolvedor Full Stack
                 </h2>
 
-                <p className="mb-5 text-muted-custom" style={{ maxWidth: "480px", fontSize: "1.1rem", lineHeight: "1.6" }}>
+                <p className={`${styles.heroDescription} mb-5 ${styles.textMutedCustom}`}>
                   Criando experiências digitais modernas e escaláveis com foco
                   em performance e design.
                 </p>
 
                 <div className="d-flex flex-wrap gap-3">
-                  <Button className="btn-primary-custom px-4 py-2 d-flex align-items-center gap-2">
+                  <Button className={`${styles.btnPrimaryCustom} px-4 py-2 d-flex align-items-center gap-2`}>
                     <Download size={18} />
                     Baixar Currículo
                   </Button>
 
-                  <Button className="btn-outline-custom px-4 py-2 d-flex align-items-center gap-2">
+                  <Button className={`${styles.btnOutlineCustom} px-4 py-2 d-flex align-items-center gap-2`}>
                     <Mail size={18} />
                     Entrar em Contato
                   </Button>
@@ -77,13 +77,13 @@ const HeroSection = () => {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="position-relative"
               >
-                <div className="hero-image-wrapper">
+                <div className={styles.heroImageWrapper}>
                   <Image
                       src={heroImg}
                       alt="Perfil"
                       className="w-100 h-100 object-fit-cover"
                   />
-                  <div className="hero-image-glow"></div>
+                  <div className={styles.heroImageGlow}></div>
                 </div>
               </motion.div>
             </Col>
@@ -93,7 +93,7 @@ const HeroSection = () => {
       </section>
 
       {/* Tecnologias & Ferramentas */}
-      <section className="tech-section py-5">
+      <section className={`${styles.techSection} py-5`}>
         <Container>
           <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -101,7 +101,7 @@ const HeroSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
           >
-            <h2 className="tech-title fw-bold mb-4">
+            <h2 className={`${styles.techTitle} fw-bold mb-4`}>
               Tecnologias & Ferramentas
             </h2>
 
@@ -109,7 +109,7 @@ const HeroSection = () => {
               {technologies.map((tech, i) => (
                 <motion.span
                     key={tech}
-                    className="tech-badge"
+                    className={styles.techBadge}
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -124,7 +124,7 @@ const HeroSection = () => {
       </section>
 
       {/* Projetos */}
-      <section className="projects-section py-5">
+      <section className={`${styles.projectsSection} py-5`}>
         <Container>
           <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -132,7 +132,7 @@ const HeroSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title fw-bold mb-4">Projetos</h2>
+            <h2 className={`${styles.sectionTitle} fw-bold mb-4`}>Projetos</h2>
           </motion.div>
 
           <Row className="g-4">
@@ -146,8 +146,8 @@ const HeroSection = () => {
                     className="h-100"
                     onClick={() => handleCardClick(project)}
                 >
-                  <div className="project-card h-100">
-                    <div className="project-card-image">
+                  <div className={`${styles.projectCard} h-100`}>
+                    <div className={styles.projectCardImage}>
                       <img
                           src={project.image}
                           alt={project.title}
@@ -155,17 +155,17 @@ const HeroSection = () => {
                       />
                     </div>
 
-                    <div className="project-card-body">
+                    <div className={styles.projectCardBody}>
                       <div className="d-flex align-items-center justify-content-between mb-2">
-                        <h3 className="project-card-title">{project.title}</h3>
-                        <ExternalLink size={16} className="project-card-link-icon" />
+                        <h3 className={styles.projectCardTitle}>{project.title}</h3>
+                        <ExternalLink size={16} className={styles.projectCardLinkIcon} />
                       </div>
 
-                      <p className="project-card-description">{project.description}</p>
+                      <p className={styles.projectCardDescription}>{project.description}</p>
 
                       <div className="d-flex flex-wrap gap-2 mt-auto pt-3">
                         {project.tags.map((tag) => (
-                          <span key={tag} className="project-tag">{tag}</span>
+                          <span key={tag} className={styles.projectTag}>{tag}</span>
                         ))}
                       </div>
                     </div>

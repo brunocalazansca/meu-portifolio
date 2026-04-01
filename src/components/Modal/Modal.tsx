@@ -1,7 +1,8 @@
 import { Modal, Button } from "react-bootstrap";
 import { ExternalLink, Code2 } from "lucide-react";
 import type { Project } from "../../data/projects";
-import "./Modal.css";
+import appStyles from "../../pages/App/App.module.scss";
+import styles from "./Modal.module.scss";
 
 interface ProjectModalProps {
     project: Project | null;
@@ -18,19 +19,19 @@ const ProjectModal = ({ project, open, onClose }: ProjectModalProps) => {
             onHide={onClose}
             size="lg"
             centered
-            contentClassName="project-modal-content"
+            contentClassName={styles.projectModalContent}
         >
-            <Modal.Header closeButton className="project-modal-header">
-                <Modal.Title className="project-modal-title">
+            <Modal.Header closeButton className={styles.projectModalHeader}>
+                <Modal.Title className={styles.projectModalTitle}>
                     {project.title}
                 </Modal.Title>
             </Modal.Header>
 
-            <Modal.Body className="project-modal-body">
+            <Modal.Body className={styles.projectModalBody}>
                 <div className="d-flex flex-column gap-4">
 
                     {/* Imagem */}
-                    <div className="project-modal-image">
+                    <div className={styles.projectModalImage}>
                         <img
                             src={project.image}
                             alt={project.title}
@@ -41,14 +42,14 @@ const ProjectModal = ({ project, open, onClose }: ProjectModalProps) => {
                     {/* Tags */}
                     <div className="d-flex flex-wrap gap-2">
                         {project.tags.map((tag) => (
-                            <span key={tag} className="project-modal-tag">
+                            <span key={tag} className={styles.projectModalTag}>
                                 {tag}
                             </span>
                         ))}
                     </div>
 
                     {/* Descrição */}
-                    <p className="project-modal-description">
+                    <p className={styles.projectModalDescription}>
                         {project.details}
                     </p>
 
@@ -59,7 +60,7 @@ const ProjectModal = ({ project, open, onClose }: ProjectModalProps) => {
                                 href={project.liveUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn-primary-custom d-inline-flex align-items-center gap-2 px-4 py-2"
+                                className={`${appStyles.btnPrimaryCustom} d-inline-flex align-items-center gap-2 px-4 py-2`}
                             >
                                 <ExternalLink size={16} />
                                 Acessar Projeto
@@ -71,7 +72,7 @@ const ProjectModal = ({ project, open, onClose }: ProjectModalProps) => {
                                 href={project.repoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn-outline-custom d-inline-flex align-items-center gap-2 px-4 py-2"
+                                className={`${appStyles.btnOutlineCustom} d-inline-flex align-items-center gap-2 px-4 py-2`}
                             >
                                 <Code2 size={16} />
                                 Repositório

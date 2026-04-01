@@ -1,12 +1,12 @@
 import { Container } from "react-bootstrap";
-import "./Footer.css";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
-    <footer className="site-footer">
+    <footer className={styles.siteFooter}>
       <Container>
         <p className="mb-0">
-          © {new Date().getFullYear()} <span className="footer-name">Seu Nome</span>. Todos os direitos reservados.
+          © {new Date().getFullYear()} <span className={styles.footerName}>Bruno Calazans Carritilha</span>. Todos os direitos reservados.
         </p>
       </Container>
     </footer>
