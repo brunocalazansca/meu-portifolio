@@ -6,6 +6,7 @@ interface NavLinkCompatProps extends Omit<NavLinkProps, "className"> {
     className?: string;
     activeClassName?: string;
     pendingClassName?: string;
+    children?: React.ReactNode;
 }
 
 const NavLink = forwardRef<HTMLAnchorElement, NavLinkCompatProps>(
@@ -14,7 +15,7 @@ const NavLink = forwardRef<HTMLAnchorElement, NavLinkCompatProps>(
             <RouterNavLink
                 to={to}
                 ref={ref}
-                className={({ isActive, isPending }) =>
+                className={({ isActive, isPending }: { isActive: boolean; isPending: boolean }): string =>
                     classNames(
                         "nav-link",
                         className,
