@@ -31,7 +31,7 @@ const HeroSection = () => {
         <Container>
           <Row className="align-items-center">
 
-            <Col md={6} lg={7} className="text-md-start pt-5 pt-md-0">
+            <Col md={6} lg={7} className="text-center text-md-start pt-5 pt-md-0">
               <motion.div
                   initial={styles.initial}
                   animate={styles.animate}
@@ -55,7 +55,7 @@ const HeroSection = () => {
                   </h3>
                 </div>
 
-                <div className="d-flex flex-wrap gap-3">
+                <div className="d-flex flex-wrap justify-content-center justify-content-md-start gap-3">
                   <a
                       href='../../../public/documents/curriculo.pdf'
                       download="Bruno_Calazans_CV.pdf"
@@ -134,12 +134,13 @@ const HeroSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="text-center text-md-start"
           >
             <h2 className={`${styles.techTitle} fw-bold mb-4`}>
               Tecnologias & Ferramentas
             </h2>
 
-            <div className="d-flex flex-wrap gap-2">
+            <div className="d-flex flex-wrap justify-content-center justify-content-md-start gap-2">
               {technologies.map((tech, i) => (
                 <motion.span
                     key={tech}
@@ -164,6 +165,7 @@ const HeroSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="text-center text-md-start"
           >
             <h2 className={`${styles.sectionTitle} fw-bold mb-4`}>Projetos</h2>
           </motion.div>
@@ -217,6 +219,7 @@ const HeroSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="text-center text-md-start"
           >
             <h2 className={`${styles.sectionTitle} fw-bold mb-4`}>Certificações</h2>
 
